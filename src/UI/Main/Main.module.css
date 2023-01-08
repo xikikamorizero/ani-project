@@ -1,0 +1,12 @@
+.mainContainer{
+    display: flex;
+    justify-content: center;
+}
+
+.main {
+    margin-top: 10px;
+    display: grid;
+    width: 90%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap:10px;
+}
