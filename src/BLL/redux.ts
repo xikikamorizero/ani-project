@@ -1,11 +1,13 @@
-import { animeReducer } from './anime-reducer';
+import animeReducer from './anime-reducer';
 import { applyMiddleware, combineReducers, createStore, compose} from "redux";
 import createSagaMiddleware from 'redux-saga';
 import RootSaga from "./saga/saga";
+import mangaReducer from './manga-reducer';
 
 
 let Rootreducer = combineReducers({
-  anime:animeReducer
+  anime:animeReducer,
+  manga:mangaReducer
 });
 
 export const sagaMiddleware = createSagaMiddleware()

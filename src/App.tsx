@@ -1,19 +1,19 @@
-import React, { useEffect } from 'react';
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
-import { useSelector, useDispatch } from 'react-redux';
-import { AppStateType } from './BLL/redux';
-import { sagaGetAnime } from './BLL/anime-reducer';
 import Main from './UI/Main/Main';
+import { Route, Routes } from 'react-router-dom';
+import Anime from './UI/Anime/Anime';
+import Manga from './UI/Manga/Manga';
+
 
 function App() {
-  const dispatch = useDispatch()
-  
-  useEffect(() => { dispatch(sagaGetAnime(10, 0)) }, [])
   return (
     <div className="App">
-      {/* {anime.map((a: any) => <div className='anime' key={a.id}>{a.attributes.description}</div>)} */}
       <Main />
+      <Routes>
+        <Route path='/anime' element={<Anime />} />
+        <Route path='/manga' element={<Manga />} />
+      </Routes>
     </div>
   );
 }

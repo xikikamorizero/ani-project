@@ -1,0 +1,11 @@
+.page{
+    display: flex;
+    margin: 10px;
+}
+.pageNumber {
+    border: 1px solid silver;
+}
+
+.selectedPage {
+    border: 1px solid  black;
+}
