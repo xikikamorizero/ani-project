@@ -6,7 +6,7 @@ import { useState } from "react";
 const Pagination: React.FC<PageType> = ({ limit, offset, count, action, pageSize=10, currentPage}) => {
 
     let pagesCount = Math.ceil(count / limit);
-    console.log(pagesCount, limit, count)
+    // console.log(pagesCount, limit, count)
     let pages = [];
     for (let i = 1; i <= pagesCount; i++) {
         if (i == 1) {
@@ -16,7 +16,7 @@ const Pagination: React.FC<PageType> = ({ limit, offset, count, action, pageSize
             pages.push({ page: i, offset: limit * (i - 1) })
         }
     }
-    console.log(pages)
+    // console.log(pages)
     let portionCount = Math.ceil(pagesCount / pageSize);
     let [portionNumber, setPortionNumber] = useState(1)
     let leftPortionPageNumber = (portionNumber - 1) * pageSize + 1;

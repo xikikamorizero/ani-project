@@ -1,0 +1,42 @@
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.content {
+    min-height: 100%;
+    width: 55%;
+}
+
+.one {
+    height: 50%;
+    display: flex;
+    background-color: cornflowerblue;
+}
+
+.two {
+    display: flex;
+    justify-content: center;
+    border: 3px solid sienna;
+    background-color: cornflowerblue;
+}
+
+.infoImg {
+    width: 35%;
+    margin: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.info {
+    margin: 10px;
+    width: 55%;
+}
+
+.title {}
+
+.description {
+    width: 90%;
+}

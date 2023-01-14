@@ -1,5 +1,5 @@
 .mainContainer{
-
+background-color: silver;
 }
 .main{
     margin-top: 3px;
@@ -26,4 +26,25 @@
     margin-right: 2px;
     border:2px solid silver;
     border-radius: 3px;
+}
+
+/*  */
+
+.animeContainer{
+    display: flex;
+    justify-content: center;
+}
+
+.animeBlock {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: grid;
+    width: 90%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap:10px;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

@@ -23,7 +23,7 @@ const mangaReducer = (state = initialState, action: any): InitialStateType => {
                 ...state,
                 manga: action.manga
             }
-        case "GET_SEARCH":
+        case "GET_SEARCH_MANGA":
             return {
                 ...state,
                 categries: state.categries + action.text
@@ -38,10 +38,15 @@ const mangaReducer = (state = initialState, action: any): InitialStateType => {
                 ...state,
                 count: action.count
             }
-        case "GET_CURRENT_PAGE":
+        case "GET_CURRENT_PAGE_MANGA":
             return {
                 ...state,
                 currentPage: action.currentPage
+            }
+        case "GET_IS_FETCHING_MANGA":
+            return {
+                ...state,
+                isFetching:action.isFetching
             }
         default: return state
     }
@@ -53,7 +58,7 @@ export const actionManga = {
         manga
     } as const),
     getSearch: (text: string) => ({
-        type: "GET_SEARCH",
+        type: "GET_SEARCH_MANGA",
         text
     } as const),
     nextPageManga: (offset: number) => ({
@@ -65,8 +70,12 @@ export const actionManga = {
         count
     } as const),
     getCurrentPage: (currentPage: number) => ({
-        type: "GET_CURRENT_PAGE",
+        type: "GET_CURRENT_PAGE_MANGA",
         currentPage
+    } as const),
+    getFetching: (isFetching: boolean) => ({
+        type: "GET_IS_FETCHING_MANGA",
+        isFetching
     } as const)
 }
 
@@ -80,7 +89,7 @@ export const sagaGetManga = (limit: number, offset: number) => {
 
 export const sagaGetSearch = (limit: number, offset: number, categories: string) => {
     return {
-        type: "saga/GET_SEARCH",
+        type: "saga/GET_SEARCH_MANGA",
         limit,
         offset,
         categories

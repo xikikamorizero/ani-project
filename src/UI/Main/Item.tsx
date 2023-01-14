@@ -1,10 +1,11 @@
 import React from "react";
 import style from './Item.module.css'
+import { useNavigate } from "react-router-dom";
 
-
-const Item = ({art, title, desription}:any) => {
+const Item = ({art, title, desription,id}:any) => {
+    let navigate = useNavigate()
     return (
-        <div className={style.itemContainer}>
+        <div className={style.itemContainer} onClick={()=>{ navigate('/info/'+id)}}>
             <div className={style.photoContainer}>
                 <img src={art} />
             </div>

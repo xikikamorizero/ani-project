@@ -10,6 +10,7 @@ export function* GetManga({ limit, offset }: M1): any {
         const response = yield call(manga.getManga, limit, offset)
         yield put(actionManga.getManga(response.data))
         yield put(actionManga.getCount(response.meta.count))
+        yield put(actionManga.getFetching(false))
     } catch (e) {
         console.log(e, 'Error manga Saga')
     }
